@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Eat-Da-Burger</title>
+
+</head>
+<body>
+  
+ <div class="container">
+<div class="jumbotron">	
+		<form action="/create" method="POST">
+			<input placeholder="Create Your Burger!" id="create" name="name"></input>
+      <button class="btn btn-primary" type="submit">Build It!</button>
+		</form>
+
+	</div>
+ 
+
+    <div class="row">
+		<!--available burgers section -->
+		<div class="col-sm-6">
+			{{#each burgers}}
+			{{#unless this.devoured}}
+				<div class="row" id="l{{this.id}}">
+					<div>
+	    				<h3 class="burger-id">{{this.id}}. </h3>
+	  				</div>
+						<h3> {{this.burger_name}}</h3>
+						<form action="/update/{{this.id}}?_method=PUT" method="POST">
+							<button class="btn btn-primary">DEVOUR!</button>
+						</form>
+				</div>
+       
+				{{/unless}}
+			{{/each}}
+		</div>	
+
+<div class="col-sm-6 right">
+			{{#each burgers}}
+			{{#if this.devoured}}
+				<div class="row " id="r{{this.id}}">
+					<div>
+	    				<h3>{{this.id}}. </h3>
+	  				</div>
+						<h3>{{this.burger_name}}</h3>
+				</div>
+				{{/if}}
+			{{/each}}
+		</div>	
+	</div>	
+</div>
+
+
+
+
+  </div><!--container end-->
+</body>
+</html>
