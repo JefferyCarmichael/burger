@@ -10,42 +10,61 @@
 <body>
   
  <div class="container">
-<div class="jumbotron">	
+<div class="jumbotron">
+  <h1 class="display-3">Eat-DA-Burger!</h1>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-4"> </div><!--Spacer-->	
+<div class="col-sm-6">
 		<form action="/create" method="POST">
 			<input placeholder="Create Your Burger!" id="create" name="name"></input>
-      <button class="btn btn-primary" type="submit">Build It!</button>
+        <button id="burger-add" class="btn btn-danger" type="submit"><i class="fas fa-caret-square-right"></i> Build It!</button>
 		</form>
-
 	</div>
+	<div class="col-sm-2"></div><!--Spacer-->
+	</div><!--row end-->
  
-
+ <!--title-->
     <div class="row">
-		<!--available burgers section -->
+		<div class="col-sm-6">
+			<p id="sign">Available Burgers:</p>
+		</div>
+
+		<div class="col-sm-6">
+			<p id="sign">Eaten Burgers:</p>
+		</div>		
+	</div><!--row end-->
+	
+	<!--available burgers -->
+    <div class="row">	
 		<div class="col-sm-6">
 			{{#each burgers}}
 			{{#unless devoured}}
-				<div class="row" id="{{id}}">
+				<div class="row burger" id="{{id}}">
 					<div>
-	    				<p class="burger-id">{{id}}. </p>
+	    				<p id="number">{{id}}. </p>
 	  				</div>
-						<p> {{burger_name}}</p>
+						<p id="bname"> {{burger_name}}</p>
 						<form action="/update/{{id}}?_method=PUT" method="POST">
-							<button class="btn btn-primary">DEVOUR!</button>
+							<button class="btn btn-danger" id="btn"><i class="fas fa-caret-square-right"></i> DEVOUR!      </button>
 						</form>
 				</div>
        
 				{{/unless}}
 			{{/each}}
 		</div>	
-
+	<!--devoured burgers -->
 <div class="col-sm-6 right">
 			{{#each burgers}}
 			{{#if devoured}}
-				<div class="row " id="{{id}}">
+				<div class="row dburger" id="{{id}}">
 					<div>
-	    				<p>{{id}}. </p>
+	    				<p id="number">{{id}}. </p>
 	  				</div>
-						<p>{{burger_name}}</p>
+						<p id="bname">{{burger_name}}</p>
 				</div>
 				{{/if}}
 			{{/each}}
