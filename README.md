@@ -1,4 +1,5 @@
 # Eat-DA-Burger
+![GitHub Logo](/public/img/burger.jpg)
 
 Eat-DA-Burger! is an app that lets users input the names of burgers they'd like to eat.
 
