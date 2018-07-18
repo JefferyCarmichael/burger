@@ -3,7 +3,7 @@
     text-align: center;
     height: 425px;
     background-image: url("../img/burger_sandwich_PNG4144.png");
-    background-color: rgb(250, 252, 253);
+    background-color: white;
     background-repeat: no-repeat;
     background-size: 500px 340px;
     background-position: center; 
@@ -39,7 +39,7 @@ font-weight: bold;
     border-top: 2px solid rgb(158, 157, 157);
     border-right: 2px solid lightgray;
     border-bottom: 2px solid lightgray;
-    box-shadow: 2px 2px 3px 2px #888888;
+    box-shadow: 2px 2px 3px 1px #b1b0b0;
     font-family: 'Source Sans Pro', sans-serif;
 
     
@@ -53,7 +53,7 @@ font-weight: bold;
 }
 input{
     border-radius: 3px; 
-    box-shadow: 2px 2px 3px 2px #888888;
+    box-shadow: 2px 2px 3px 1px #b1b0b0;
     margin-right: 10px;
     text-align: center;
 }
@@ -71,7 +71,7 @@ input{
 }
 
 .btn{
-    box-shadow: 1px 1px 1px 1px #888888; 
+    box-shadow: 1px 1px 1px 1px #a3a3a3; 
     text-shadow: 2px 2px 8px rgb(59, 58, 58);
     font-family: 'Source Sans Pro', sans-serif;
 }
